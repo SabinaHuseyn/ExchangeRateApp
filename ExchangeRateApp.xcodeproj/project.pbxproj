@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D7C751A2717719D00716F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C75192717719D00716F36 /* AppDelegate.swift */; };
 		1D7C751E2717719D00716F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C751D2717719D00716F36 /* ViewController.swift */; };
-		1D7C75212717719D00716F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7C751F2717719D00716F36 /* Main.storyboard */; };
 		1D7C75242717719D00716F36 /* ExchangeRateApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C75222717719D00716F36 /* ExchangeRateApp.xcdatamodeld */; };
 		1D7C7526271771A000716F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7C7525271771A000716F36 /* Assets.xcassets */; };
 		1D7C7529271771A000716F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7C7527271771A000716F36 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,11 @@
 		1D7C754E27177A8300716F36 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C754D27177A8300716F36 /* UIColor+Extension.swift */; };
 		1D7C755127177D2300716F36 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C755027177D2300716F36 /* PersistenceManager.swift */; };
 		1D7C755327178EC000716F36 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C755227178EC000716F36 /* MainTableViewCell.swift */; };
+		1D7C7557271794E200716F36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D7C7556271794E200716F36 /* Alamofire */; };
+		1D7C75592717950800716F36 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C75582717950800716F36 /* Service.swift */; };
+		1D7C755B2717951600716F36 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C755A2717951600716F36 /* API.swift */; };
+		1D7C755E271798A800716F36 /* RatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C755D271798A800716F36 /* RatesModel.swift */; };
+		1D8B30292718302C00B287EB /* RatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8B30282718302C00B287EB /* RatesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +46,6 @@
 		1D7C75162717719D00716F36 /* ExchangeRateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7C75192717719D00716F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D7C751D2717719D00716F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1D7C75202717719D00716F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D7C75232717719D00716F36 /* ExchangeRateApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExchangeRateApp.xcdatamodel; sourceTree = "<group>"; };
 		1D7C7525271771A000716F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D7C7528271771A000716F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,7 +57,11 @@
 		1D7C753F271771A100716F36 /* ExchangeRateAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1D7C754D27177A8300716F36 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1D7C755027177D2300716F36 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		1D7C755227178EC000716F36 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTableViewCell.swift; path = CoreData/MainTableViewCell.swift; sourceTree = "<group>"; };
+		1D7C755227178EC000716F36 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		1D7C75582717950800716F36 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		1D7C755A2717951600716F36 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1D7C755D271798A800716F36 /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
+		1D8B30282718302C00B287EB /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7C7557271794E200716F36 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,13 +113,14 @@
 		1D7C75182717719D00716F36 /* ExchangeRateApp */ = {
 			isa = PBXGroup;
 			children = (
+				1D7C75542717948A00716F36 /* Service */,
 				1D7C754F27177D0E00716F36 /* CoreData */,
 				1D7C754C27177A6400716F36 /* Extensions */,
-				1D7C75192717719D00716F36 /* AppDelegate.swift */,
-				1D7C751D2717719D00716F36 /* ViewController.swift */,
-				1D7C755227178EC000716F36 /* MainTableViewCell.swift */,
-				1D7C751F2717719D00716F36 /* Main.storyboard */,
+				1D7C755C2717989100716F36 /* Model */,
+				1D8B302727182FB100B287EB /* ViewModel */,
+				1D8B302627182FA600B287EB /* View */,
 				1D7C7525271771A000716F36 /* Assets.xcassets */,
+				1D7C75192717719D00716F36 /* AppDelegate.swift */,
 				1D7C7527271771A000716F36 /* LaunchScreen.storyboard */,
 				1D7C752A271771A000716F36 /* Info.plist */,
 				1D7C75222717719D00716F36 /* ExchangeRateApp.xcdatamodeld */,
@@ -152,6 +161,40 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		1D7C75542717948A00716F36 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1D7C75582717950800716F36 /* Service.swift */,
+				1D7C755A2717951600716F36 /* API.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1D7C755C2717989100716F36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D7C755D271798A800716F36 /* RatesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D8B302627182FA600B287EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D7C751D2717719D00716F36 /* ViewController.swift */,
+				1D7C755227178EC000716F36 /* MainTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D8B302727182FB100B287EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D8B30282718302C00B287EB /* RatesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,6 +211,9 @@
 			dependencies = (
 			);
 			name = ExchangeRateApp;
+			packageProductDependencies = (
+				1D7C7556271794E200716F36 /* Alamofire */,
+			);
 			productName = ExchangeRateApp;
 			productReference = 1D7C75162717719D00716F36 /* ExchangeRateApp.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +286,9 @@
 				Base,
 			);
 			mainGroup = 1D7C750D2717719D00716F36;
+			packageReferences = (
+				1D7C7555271794E200716F36 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1D7C75172717719D00716F36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +307,6 @@
 			files = (
 				1D7C7529271771A000716F36 /* LaunchScreen.storyboard in Resources */,
 				1D7C7526271771A000716F36 /* Assets.xcassets in Resources */,
-				1D7C75212717719D00716F36 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +332,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D7C755127177D2300716F36 /* PersistenceManager.swift in Sources */,
+				1D7C75592717950800716F36 /* Service.swift in Sources */,
 				1D7C75242717719D00716F36 /* ExchangeRateApp.xcdatamodeld in Sources */,
 				1D7C751E2717719D00716F36 /* ViewController.swift in Sources */,
 				1D7C751A2717719D00716F36 /* AppDelegate.swift in Sources */,
 				1D7C755327178EC000716F36 /* MainTableViewCell.swift in Sources */,
+				1D7C755E271798A800716F36 /* RatesModel.swift in Sources */,
+				1D7C755B2717951600716F36 /* API.swift in Sources */,
+				1D8B30292718302C00B287EB /* RatesViewModel.swift in Sources */,
 				1D7C754E27177A8300716F36 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,14 +377,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1D7C751F2717719D00716F36 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D7C75202717719D00716F36 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1D7C7527271771A000716F36 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -472,8 +516,10 @@
 				INFOPLIST_FILE = ExchangeRateApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -483,7 +529,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -499,8 +545,10 @@
 				INFOPLIST_FILE = ExchangeRateApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,7 +558,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -650,6 +698,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D7C7555271794E200716F36 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D7C7556271794E200716F36 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D7C7555271794E200716F36 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1D7C75222717719D00716F36 /* ExchangeRateApp.xcdatamodeld */ = {

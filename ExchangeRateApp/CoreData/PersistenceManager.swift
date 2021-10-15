@@ -16,7 +16,7 @@ final class PersistenceManager {
     // MARK: - Core Data stack
     
     lazy var persistenceContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "NewsApp")
+        let container = NSPersistentContainer(name: "ExchangeRateApp")
         container.loadPersistentStores(completionHandler: { (storedDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error: \(error), \(error.userInfo)")

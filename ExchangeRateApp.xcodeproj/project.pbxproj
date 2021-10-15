@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D701FE72719D28200F34487 /* RatesDictionary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D701FE52719D28200F34487 /* RatesDictionary+CoreDataClass.swift */; };
+		1D701FE82719D28200F34487 /* RatesDictionary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D701FE62719D28200F34487 /* RatesDictionary+CoreDataProperties.swift */; };
+		1D701FEB2719D3B700F34487 /* Timestamp+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D701FE92719D3B700F34487 /* Timestamp+CoreDataClass.swift */; };
+		1D701FEC2719D3B700F34487 /* Timestamp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D701FEA2719D3B700F34487 /* Timestamp+CoreDataProperties.swift */; };
+		1D701FEE271A098E00F34487 /* ViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D701FED271A098E00F34487 /* ViewController+CoreData.swift */; };
 		1D7C751A2717719D00716F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C75192717719D00716F36 /* AppDelegate.swift */; };
 		1D7C751E2717719D00716F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C751D2717719D00716F36 /* ViewController.swift */; };
 		1D7C75242717719D00716F36 /* ExchangeRateApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C75222717719D00716F36 /* ExchangeRateApp.xcdatamodeld */; };
@@ -43,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D701FE52719D28200F34487 /* RatesDictionary+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RatesDictionary+CoreDataClass.swift"; path = "ExchangeRateApp/CoreData/RatesDictionary+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		1D701FE62719D28200F34487 /* RatesDictionary+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RatesDictionary+CoreDataProperties.swift"; path = "ExchangeRateApp/CoreData/RatesDictionary+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		1D701FE92719D3B700F34487 /* Timestamp+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timestamp+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		1D701FEA2719D3B700F34487 /* Timestamp+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timestamp+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		1D701FED271A098E00F34487 /* ViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreData.swift"; sourceTree = "<group>"; };
 		1D7C75162717719D00716F36 /* ExchangeRateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7C75192717719D00716F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D7C751D2717719D00716F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +166,10 @@
 		1D7C754F27177D0E00716F36 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				1D701FE92719D3B700F34487 /* Timestamp+CoreDataClass.swift */,
+				1D701FEA2719D3B700F34487 /* Timestamp+CoreDataProperties.swift */,
+				1D701FE52719D28200F34487 /* RatesDictionary+CoreDataClass.swift */,
+				1D701FE62719D28200F34487 /* RatesDictionary+CoreDataProperties.swift */,
 				1D7C755027177D2300716F36 /* PersistenceManager.swift */,
 			);
 			path = CoreData;
@@ -182,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				1D7C751D2717719D00716F36 /* ViewController.swift */,
+				1D701FED271A098E00F34487 /* ViewController+CoreData.swift */,
 				1D7C755227178EC000716F36 /* MainTableViewCell.swift */,
 			);
 			path = View;
@@ -334,13 +349,18 @@
 				1D7C755127177D2300716F36 /* PersistenceManager.swift in Sources */,
 				1D7C75592717950800716F36 /* Service.swift in Sources */,
 				1D7C75242717719D00716F36 /* ExchangeRateApp.xcdatamodeld in Sources */,
+				1D701FE82719D28200F34487 /* RatesDictionary+CoreDataProperties.swift in Sources */,
 				1D7C751E2717719D00716F36 /* ViewController.swift in Sources */,
 				1D7C751A2717719D00716F36 /* AppDelegate.swift in Sources */,
 				1D7C755327178EC000716F36 /* MainTableViewCell.swift in Sources */,
 				1D7C755E271798A800716F36 /* RatesModel.swift in Sources */,
+				1D701FEC2719D3B700F34487 /* Timestamp+CoreDataProperties.swift in Sources */,
+				1D701FE72719D28200F34487 /* RatesDictionary+CoreDataClass.swift in Sources */,
 				1D7C755B2717951600716F36 /* API.swift in Sources */,
+				1D701FEB2719D3B700F34487 /* Timestamp+CoreDataClass.swift in Sources */,
 				1D8B30292718302C00B287EB /* RatesViewModel.swift in Sources */,
 				1D7C754E27177A8300716F36 /* UIColor+Extension.swift in Sources */,
+				1D701FEE271A098E00F34487 /* ViewController+CoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

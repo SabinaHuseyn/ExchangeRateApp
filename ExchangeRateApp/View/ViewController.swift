@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     var mainTableView: UITableView!
     var rates: [String:Float] = [:]
+    var ratesDictionary: NSDictionary = [:]
     let datePicker = UIDatePicker()
+    var timeStamp: Int32?
+    let persistenceManager = PersistenceManager.shared
 
     var titleLbl: UILabel = {
         var label = UILabel()
@@ -26,7 +30,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        fetchData()
+        getSavedTime()
+        timeInterval()
         setupMainTableView()
         setupDatePickerView()
         setupLabel()
@@ -43,6 +48,35 @@ class ViewController: UIViewController {
         }
     }
     
+    func timeInterval() {
+        let currentTime = NSDate().timeIntervalSince1970
+        
+        if self.timeStamp != nil {
+            guard let savedTime = self.timeStamp else { return }
+            if ((Int(currentTime)) - (Int(savedTime))) > 600 {
+                fetchData()
+            } else {
+                getSavedRates()
+            }
+        } else {
+            fetchData()
+        }
+        
+    }
+// MARK: - Fetching Data
+    func fetchData() {
+        Service.shared.fetchRates() { rate  in
+            self.saveRatesToCoreData(rate)
+            let currentTime = NSDate().timeIntervalSince1970
+            self.saveTimeToCoreData(Int(currentTime))
+            DispatchQueue.main.async {
+                self.rates = rate
+                print("ETO RATE\(self.rates)")
+                self.mainTableView.reloadData()
+            }
+        }
+    }
+    // MARK: - Setup Func
     func setupLabel() {
         self.view.addSubview(titleLbl)
         titleLbl.translatesAutoresizingMaskIntoConstraints = false
@@ -50,8 +84,8 @@ class ViewController: UIViewController {
         titleLbl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 10).isActive = true
         titleLbl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         titleLbl.bottomAnchor.constraint(equalTo: mainTableView.topAnchor, constant: 0).isActive = true
-
     }
+    
     func setupMainTableView() {
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height + 200
         let displayWidth: CGFloat = self.view.frame.width
@@ -71,12 +105,10 @@ class ViewController: UIViewController {
         mainTableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 10).isActive = true
         mainTableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         mainTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
-        mainTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
-
+        mainTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
     }
     
     func setupDatePickerView(){
-//        datePickerView.delegate = self
         self.view.addSubview(datePicker)
         let calendar = Calendar(identifier: .gregorian)
         var comps = DateComponents()
@@ -96,7 +128,8 @@ class ViewController: UIViewController {
         datePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
 
     }
-    
+    // MARK: - DatePicker
+
     @objc func dateChanged(_ sender: UIDatePicker) {
 
             let iso8601DateFormatter = ISO8601DateFormatter()
@@ -108,20 +141,7 @@ class ViewController: UIViewController {
             let dateString = dateFormatter.string(from: sender.date)
             print(dateString)
             fetchDate(date: dateString)
-        
-        }
-
-    func fetchData() {
-        Service.shared.fetchRates() { rate in
-
-                DispatchQueue.main.async {
-                    
-                    self.rates = rate
-                    print("ETO RATE\(self.rates)")
-                    self.mainTableView.reloadData()
-                    }
-              }
-        }
+    }
     
     func fetchDate(date:String) {
         Service.shared.fetchHistory(date: date,completion: {(list, err) in
@@ -130,10 +150,10 @@ class ViewController: UIViewController {
                 return
             }
             DispatchQueue.main.async {
+                self.ratesDictionary = [:]
                 self.rates.removeAll()
                 self.rates = list
                 self.mainTableView.reloadData()
-                
             }
         })
     }
@@ -142,18 +162,33 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(rates.count)
-        return rates.count
+        if self.rates == [:] {
+           return ratesDictionary.count
+        } else {
+            return rates.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
-        let arrayKeys = Array(rates.keys)
+        if self.rates == [:] {
+            let arrayKeys = Array(ratesDictionary.allKeys)
+            let arrayValues = Array(ratesDictionary.allValues)
 
-        let index = arrayKeys[indexPath.row]
-        cell.btnCurrency.setTitle(("EUR/\(index)"), for: .normal)
-        let formatted = String(format: "%.2f", rates[index] as! CVarArg)
+            let indexKeys = arrayKeys[indexPath.row]
+            let indexValues = arrayValues[indexPath.row]
+            if let values = indexValues as? Float {
+                let formatted = String(format: "%.2f", values as CVarArg)
                 cell.exchLabel.text = formatted
+            }
+            cell.btnCurrency.setTitle(("EUR / \(indexKeys)"), for: .normal)
+        } else {
+            let arrayKeys = Array(rates.keys)
+            let index = arrayKeys[indexPath.row]
+            cell.btnCurrency.setTitle(("EUR / \(index)"), for: .normal)
+            let formatted = String(format: "%.2f", rates[index]!)
+            cell.exchLabel.text = formatted
+        }
 
         return cell
     }

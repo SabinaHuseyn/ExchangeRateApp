@@ -6,20 +6,6 @@
 //
 
 import Foundation
-
-
-//struct Rate: Codable {
-//    var GBP: Float
-//    var JPY: Float
-//    var AED: Float
-//    var PLN: Float
-//    var AZN: Float
-//    var USD: Float
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case GBP, JPY, AED, PLN, AZN, USD
-//    }
-//}
     
 struct RatesModel: Codable {
     var success: Bool

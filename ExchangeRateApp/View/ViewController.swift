@@ -35,14 +35,11 @@ class ViewController: UIViewController {
         setupMainTableView()
         setupDatePickerView()
         setupLabel()
-
         self.mainTableView.reloadData()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
-       
-        DispatchQueue.main.async {
+       DispatchQueue.main.async {
             self.mainTableView.reloadData()
 
         }
@@ -144,6 +141,7 @@ class ViewController: UIViewController {
     }
     
     func fetchDate(date:String) {
+//        self.date = true
         Service.shared.fetchHistory(date: date,completion: {(list, err) in
             if let err = err {
                 print("Failed to fetch news:", err)
@@ -158,7 +156,7 @@ class ViewController: UIViewController {
         })
     }
 }
-
+// MARK: - TableView Delegate and Datasource
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

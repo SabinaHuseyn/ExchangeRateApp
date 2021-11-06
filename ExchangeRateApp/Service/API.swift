@@ -12,7 +12,6 @@ struct API {
     
  static let baseUrl = "http://api.exchangeratesapi.io/v1/latest"
  static let baseUrl1 = "http://api.exchangeratesapi.io/v1/"
- static let accessKey = "d12ba581b3808f9824b8e88085bb50d8"
-// static let symbols = "AZN,GBP,JPY,TRY,AED,PLN,USD"
+ static let accessKey = "a9331974289385e5ebe8d72c3a3a5312"
 }
 
